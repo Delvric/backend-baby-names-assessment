@@ -46,13 +46,14 @@ def extract_names(filename):
     ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
     """
     names = []
-    # +++your code here+++
-    return names
+    with open("baby1990.html", "r") as file:
+        print(file.read())
 
 
 def create_parser():
     """Create a cmd line parser object with 2 argument definitions"""
-    parser = argparse.ArgumentParser(description="Extracts and alphabetizes baby names from html.")
+    parser = argparse.ArgumentParser(
+        description="Extracts and alphabetizes baby names from html.")
     parser.add_argument(
         '--summaryfile', help='creates a summary file', action='store_true')
     # The nargs option instructs the parser to expect 1 or more filenames.
@@ -81,7 +82,7 @@ def main(args):
     # Use the create_summary flag to decide whether to print the list,
     # or to write the list to a summary file e.g. `baby1990.html.summary`
 
-    # +++your code here+++
+    extract_names(file_list)
 
 
 if __name__ == '__main__':
